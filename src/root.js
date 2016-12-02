@@ -1,16 +1,42 @@
 import React from 'react';
-import {browserHistory, Router, Route } from 'react-router'
+import {browserHistory, Router} from 'react-router'
+import {manager} from './js/flow/';
 
 import App from './js/app';
-import Start from './js/start';
+
 import './scss/main.scss';
 
-const Root = () => (
-    <Router history={browserHistory}>
-        <Route path='/' component={App}>
-            <Route path='start' component={Start}/>
-        </Route>
-    </Router>
-);
+const getRouteForStep = function (flowStep, parentStep) {
+    let routes = [{
+        path: flowStep.route.path,
+        component: flowStep.route.component,
+        onEnter() {
+            manager.updateActive(flowStep, parentStep)
+        }
+    }];
+
+    if (flowStep.hasSubSteps()) {
+        flowStep.getSubSteps().forEach(subStep => {
+            routes = routes.concat(getRouteForStep(subStep, flowStep))
+        });
+    }
+
+    return routes;
+};
+
+const Root = () => {
+    let routerRoutes = [{
+        path: '/',
+        components: App
+    }];
+
+    Object.values(manager.steps).forEach(flowStep => {
+        routerRoutes = routerRoutes.concat(getRouteForStep(flowStep));
+    });
+
+    return (
+        <Router history={browserHistory} routes={routerRoutes}></Router>
+    );
+};
 
 export default Root;
