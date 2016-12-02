@@ -18,18 +18,6 @@ export default class TempNavigation extends Component {
 
     handleClose = () => this.setState({open: false});
 
-    getSubSteps(flowStep) {
-        if (flowStep.hasSubSteps()) {
-            return flowStep.getSubSteps().map(step => {
-                return (
-                    <li key={step.route.id}>
-                        <Link to={step.getUrl(mockOrder)}>{step.route.name}</Link>
-                    </li>
-                );
-            });
-        }
-    }
-
     getMenuItem(flowStep) {
         return (
             <MenuItem key={flowStep.route.id} onTouchTap={this.handleClose}>
