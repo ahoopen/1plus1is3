@@ -49,6 +49,7 @@
         "webpack": "1.13.2",
         "webpack-dev-server": "1.16.2",
         "webpack-manifest-plugin": "1.1.0",
+        "sw-precache": "^4.2.2",
         "whatwg-fetch": "1.0.0"
     },
     "dependencies": {
@@ -60,7 +61,7 @@
     },
     "scripts": {
         "start": "node scripts/start.js",
-        "build": "node scripts/build.js",
+        "build": "node scripts/build.js && sw-precache --config=sw-precache-config.js",
         "test": "node scripts/test.js --env=jsdom"
     },
     "jest": {
