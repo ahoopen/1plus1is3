@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router';
 import {manager} from '../../../flow/index';
+import RaisedButton from 'material-ui/RaisedButton';
 
 export default class FlowCheck extends Component {
 
@@ -11,7 +12,9 @@ export default class FlowCheck extends Component {
             return current.getSubSteps().map(substep => {
                 return (
                     <div key={substep.route.id}>
-                        <Link to={substep.getUrl({id: 1})}>Naar {substep.route.name}</Link>
+                        <Link to={substep.getUrl({id: 1})}>
+                            <RaisedButton secondary={true} label={`Naar ${substep.route.name}`}/>
+                        </Link>
                         <br/>
                     </div>
                 );
@@ -23,7 +26,9 @@ export default class FlowCheck extends Component {
         const next = manager.getNext();
         if (next) {
             return (
-                <Link to={next.getUrl({id: 1})}>Naar {next.route.name}</Link>
+                <Link to={next.getUrl({id: 1})}>
+                    <RaisedButton primary={true} label={`Naar ${next.route.name}`}/>
+                </Link>
             )
         }
     }
@@ -32,7 +37,9 @@ export default class FlowCheck extends Component {
         const previous = manager.getPrevious();
         if (previous) {
             return (
-                <Link to={previous.getUrl({id: 1})}>Terug</Link>
+                <Link to={previous.getUrl({id: 1})}>
+                    <RaisedButton secondary={true} label="Terug"/>
+                </Link>
             )
         }
     }

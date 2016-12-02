@@ -1,52 +1,16 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router';
-import {manager} from './flow/index';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TempNavigation from './temp-navigation';
 
-const mockOrder = {
-    id: 1
-};
-
-class App extends Component {
-
-    getSubSteps(flowStep) {
-        if (flowStep.hasSubSteps()) {
-            return flowStep.getSubSteps().map(step => {
-                return (
-                    <li key={step.route.id}>
-                        <Link to={step.getUrl(mockOrder)}>{step.route.name}</Link>
-                    </li>
-                );
-            });
-        }
-    }
-
-    getLinks() {
-        return Object.values(manager.steps)
-            .map(flowStep => {
-                let subLinks = this.getSubSteps(flowStep);
-                return (
-                    <li key={flowStep.route.id}>
-                        <Link to={flowStep.getUrl(mockOrder)}>{flowStep.route.name}</Link>
-                        <ul>
-                            {subLinks}
-                        </ul>
-                    </li>
-                );
-            });
-    }
-
+export default class App extends Component {
     render() {
-        const links = this.getLinks();
-
         return (
-            <div className="App">
-                <ul>
-                {links}
-                </ul>
-                {this.props.children}
-            </div>
+            <MuiThemeProvider>
+                <div className="App">
+                    <TempNavigation/>
+                    {this.props.children}
+                </div>
+            </MuiThemeProvider>
         );
     }
 }
-
-export default App;

@@ -25,13 +25,14 @@ const getRouteForStep = function (flowStep, parentStep) {
 };
 
 const Root = () => {
-    let routerRoutes = [{
+    let routerRoutes = {
         path: '/',
-        components: App
-    }];
+        components: App,
+        childRoutes: []
+    };
 
     Object.values(manager.steps).forEach(flowStep => {
-        routerRoutes = routerRoutes.concat(getRouteForStep(flowStep));
+        routerRoutes.childRoutes = routerRoutes.childRoutes.concat(getRouteForStep(flowStep));
     });
 
     return (
