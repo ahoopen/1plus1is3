@@ -1,20 +1,16 @@
 import React, {Component} from 'react';
-import { Link } from 'react-router';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import TempNavigation from './temp-navigation';
 
-class App extends Component {
+export default class App extends Component {
     render() {
         return (
-            <div className="App">
-                <div className="App-header">
-                    <h2>Welcome to React</h2>
+            <MuiThemeProvider>
+                <div className="App">
+                    <TempNavigation/>
+                    {this.props.children}
                 </div>
-                <p className="App-intro">
-                    <Link to="/start">Klik hier om naar start te gaan</Link>
-                </p>
-                {this.props.children}
-            </div>
+            </MuiThemeProvider>
         );
     }
 }
-
-export default App;
