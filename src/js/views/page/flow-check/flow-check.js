@@ -54,7 +54,7 @@ export default class FlowCheck extends Component {
             <div>
                 <h1>{current.route.id}. {current.route.name}</h1>
                 <p>{current.route.description}</p>
-
+                <RoundButton onClick={this.handle}/>
                 {nextLink}
                 <br />
                 {subLinks}

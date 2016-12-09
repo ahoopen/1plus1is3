@@ -8,8 +8,8 @@ export default class Manager {
             new FlowStep(routes.TOTAL_IN_VAN),
             new FlowStep(routes.DELIVERIES),
             new FlowStep(routes.DELIVERY_DETAIL),
-            new FlowStep(routes.DELIVERY_ID_REQUIRED),
             new FlowStep(routes.DELIVERY_WHAT_TO_GRAB),
+            new FlowStep(routes.DELIVERY_ID_REQUIRED),
             new FlowStep(routes.DELIVERY_INVOICE, [
                 new FlowStep(routes.DELIVERY_RETURN_PACKAGING),
                 new FlowStep(routes.DELIVERY_RETURN_GOODS),

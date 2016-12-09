@@ -19,7 +19,7 @@ export default {
         description: 'Bezorger kan hier de inhoud van zijn bus controleren',
         canReturnTo: true,
         loop: false,
-        finished: true,
+        finished: false,
         component: FlowCheck
     },
 

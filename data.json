@@ -1,0 +1,186 @@
+{
+    "packagingTypes": [
+        {
+            "id": "AT",
+            "name": "Tas",
+            "description": "Plastic tas"
+        },
+        {
+            "id": "BO",
+            "name": "Bake-off",
+            "description": "Vers brood"
+        },
+        {
+            "id": "BU",
+            "name": "Bulk",
+            "description": "Wc papier, krat bier etc"
+        },
+        {
+            "id": "DV",
+            "name": "Diepvriestas",
+            "description": ""
+        },
+        {
+            "id": "KB",
+            "name": "Koelbox",
+            "description": ""
+        },
+        {
+            "id": "KK",
+            "name": "Klapkrat",
+            "description": ""
+        },
+        {
+            "id": "NK",
+            "name": "NFC Koeltas",
+            "description": "Langzaam lopende gekoelde producten"
+        },
+        {
+            "id": "NT",
+            "name": "NFC Tas",
+            "description": "Langzaam lopende producten"
+        },
+        {
+            "id": "WD",
+            "name": "Wijndoos",
+            "description": "Wine by the case"
+        }
+    ],
+    "emballageTypes": [
+        {
+            "id": "19988",
+            "name": "AH klapkrat",
+            "description": "4.00"
+        },
+        {
+            "id": "19821",
+            "name": "Limonadefles",
+            "description": "0.25"
+        },
+        {
+            "id": "19808",
+            "name": "Vol bierkrat (16/18/24)",
+            "description": "3.90"
+        },
+        {
+            "id": "19816",
+            "name": "Bierflesje/glazen limonade fles",
+            "description": "0.10"
+        },
+        {
+            "id": "29231",
+            "name": "Vol krat Spa (+6)",
+            "description": "3.50"
+        },
+        {
+            "id": "19737",
+            "name": "Leeg krat Coca-Cola (-8)",
+            "description": "3.00"
+        },
+        {
+            "id": "19811",
+            "name": "Leeg krat Coca-Cola (-10)",
+            "description": "2.50"
+        },
+        {
+            "id": "19874",
+            "name": "Leeg bierkrat (-18 halve liter) ",
+            "description": "2.10"
+        },
+        {
+            "id": "19814",
+            "name": "Leeg krat limonade/Spa (6/12 fles)",
+            "description": "2.30"
+        },
+        {
+            "id": "19822",
+            "name": "Vol bierkrat (+12)",
+            "description": "1.95"
+        },
+        {
+            "id": "19810",
+            "name": "Leeg bierkrat (-24)/Beertenderkrat",
+            "description": "1.50"
+        },
+        {
+            "id": "48199",
+            "name": "Leeg bierkrat (-12)",
+            "description": "0.75"
+        },
+        {
+            "id": "19806",
+            "name": "Leeg bierkrat (-16/beugel)",
+            "description": "0.70"
+        },
+        {
+            "id": "19819",
+            "name": "Melkfles",
+            "description": "0.45"
+        },
+        {
+            "id": "27177",
+            "name": "Beertender/Perfect draft",
+            "description": "5.00"
+        },
+        {
+            "id": "83498",
+            "name": "Grolschfles beugel nieuw + glas spa fles",
+            "description": "0.20"
+        }
+    ],
+    "paymentTypes": [
+        {
+            "id": "EM",
+            "name": "Emballage"
+        },
+        {
+            "id": "RG",
+            "name": "Retour goederen"
+        },
+        {
+            "id": "MP",
+            "name": "Mobiele PIN"
+        }
+    ],
+    "orders": [
+        {
+            "id": 1,
+            "total": 130.70,
+            "payments": [{
+                "type": "EM",
+                "id": "19988",
+                "price": 4,
+                "amount": 1
+            }],
+            "packaging": [
+                {
+                    "type": "AT",
+                    "amount": 1
+                },
+                {
+                    "type": "KK",
+                    "amount": 2
+                },
+                {
+                    "type": "KB",
+                    "amount": 1
+                }
+            ],
+            "deliveryInformation": {
+                "timslot": {
+                    "from": "18:00",
+                    "to": "20:00"
+                },
+                "eta": "18:21",
+                "ata": null,
+                "etd": "18:38",
+                "atd": null
+            },
+            "items": [
+                {
+                    "id": "12211"
+                }
+            ]
+        }
+    ]
+}
